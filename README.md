@@ -1,0 +1,1 @@
+# Responsive Landing Page - Team 1\n\nBuild a responsive homepage for a product, service or college event.\n\n## Preview\nOpen `index.html` in any modern web browser.\n
