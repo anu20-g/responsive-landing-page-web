@@ -3,231 +3,413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NovaFlow - High-performance intelligent workflow orchestration platform.">
-    <title>NovaFlow | Intelligent Cloud Automation</title>
+    <title>Pulse &mdash; Project Management for Fast Engineering Teams</title>
+    <meta name="description" content="Pulse is the streamlined issue tracker designed specifically for modern engineering teams. Keyboard-first, real-time sync, and zero bloat.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header with Accessible Nav -->
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="#" class="brand-logo" aria-label="NovaFlow Homepage">
-                <span class="logo-mark">⚡</span> NovaFlow
+    <!-- Top Banner -->
+    <aside class="announcement-bar">
+        <a href="#changelog" class="announcement-link">
+            <span class="announcement-tag">New</span>
+            <span>Pulse 3.0: Automated cycle insights and bi-directional GitHub sync</span>
+            <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </aside>
+
+    <!-- Global Navigation -->
+    <header class="header">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand" aria-label="Pulse Home">
+                <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#6366F1"/>
+                    <path d="M7 12L10 15L17 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="brand-name">Pulse</span>
             </a>
-            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle Navigation Menu">
-                <span class="hamburger"></span>
+
+            <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
-            <nav class="nav-menu" id="navMenu">
-                <ul class="nav-list">
-                    <li><a href="#features" class="nav-link">Features</a></li>
-                    <li><a href="#architecture" class="nav-link">Architecture</a></li>
-                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
-                    <li><a href="#faq" class="nav-link">FAQ</a></li>
-                </ul>
-                <div class="nav-cta-wrapper">
-                    <a href="#pricing" class="btn btn-secondary">Sign In</a>
-                    <a href="#cta" class="btn btn-primary">Start Free Trial</a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#features" class="nav-item">Features</a>
+                <a href="#method" class="nav-item">Method</a>
+                <a href="#customers" class="nav-item">Customers</a>
+                <a href="#pricing" class="nav-item">Pricing</a>
+                <a href="#faq" class="nav-item">FAQ</a>
+                <div class="mobile-auth">
+                    <a href="#pricing" class="btn btn-ghost">Log In</a>
+                    <a href="#cta" class="btn btn-primary">Start Trial</a>
                 </div>
             </nav>
+
+            <div class="desktop-auth">
+                <a href="#pricing" class="btn btn-ghost">Log In</a>
+                <a href="#cta" class="btn btn-primary">Get Started</a>
+            </div>
         </div>
     </header>
 
-    <main id="mainContent">
+    <main>
         <!-- Hero Section -->
-        <section class="hero-section" id="hero">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <span class="badge">Next-Gen Orchestration v2.4</span>
-                    <h1 class="hero-title">Automate Cloud Infrastructure with Zero Friction</h1>
-                    <p class="hero-description">
-                        NovaFlow unites distributed CI/CD pipelines, container cluster deployments, and real-time observability in one unified developer platform.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#pricing" class="btn btn-primary btn-large">Get Started Free</a>
-                        <a href="#features" class="btn btn-outline btn-large">Explore Architecture</a>
-                    </div>
-                    <div class="hero-proof">
-                        <div class="proof-avatars">
-                            <span class="avatar">👨‍💻</span>
-                            <span class="avatar">👩‍💻</span>
-                            <span class="avatar">🧑‍💻</span>
-                        </div>
-                        <p class="proof-text">Trusted by <strong>15,000+</strong> engineering teams worldwide</p>
-                    </div>
+        <section class="hero-section">
+            <div class="container hero-container text-center">
+                <div class="hero-pill">
+                    <span class="pill-dot"></span> Purpose-built for engineering velocity
                 </div>
-                <div class="hero-visual">
-                    <div class="mockup-window">
-                        <div class="window-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                            <span class="window-title">workflow.orchestration.yml</span>
+                <h1 class="hero-title">Issue tracking you will actually enjoy using</h1>
+                <p class="hero-subtitle">
+                    Meet the modern standard for software development. Streamline sprints, automate backlog hygiene, and coordinate releases with sub-50ms keyboard interactions.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#pricing" class="btn btn-primary btn-lg">Start Free Trial &mdash; 14 Days</a>
+                    <a href="#demo" class="btn btn-secondary btn-lg">Book Product Tour</a>
+                </div>
+                <div class="hero-footnote">No credit card required &bull; Works seamlessly with GitHub &bull; SOC 2 Type II Certified</div>
+            </div>
+
+            <!-- Interactive App Workspace Preview -->
+            <div class="container preview-container">
+                <div class="app-frame">
+                    <div class="frame-bar">
+                        <div class="frame-buttons">
+                            <span class="f-dot close"></span>
+                            <span class="f-dot min"></span>
+                            <span class="f-dot max"></span>
                         </div>
-                        <pre class="code-preview"><code><span class="c-keyword">pipeline</span>: <span class="c-string">"production-deploy"</span>
-<span class="c-keyword">triggers</span>:
-  - <span class="c-prop">branch</span>: <span class="c-string">"main"</span>
-<span class="c-keyword">jobs</span>:
-  <span class="c-prop">build-cluster</span>:
-    <span class="c-keyword">strategy</span>: <span class="c-string">"matrix"</span>
-    <span class="c-keyword">nodes</span>: <span class="c-number">12</span>
-    <span class="c-keyword">latency</span>: <span class="c-string">"&lt; 25ms"</span>
-    <span class="c-keyword">status</span>: <span class="c-success">"READY ⚡"</span></code></pre>
+                        <div class="frame-search">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <span>Type <kbd>⌘K</kbd> to search issues, cycles, or commands...</span>
+                        </div>
+                        <div class="frame-meta">Sprint 42 &bull; 84% Complete</div>
+                    </div>
+
+                    <!-- Interactive Tabs Navigation -->
+                    <div class="frame-tabs">
+                        <button class="frame-tab active" data-tab="active">Active Sprint (14)</button>
+                        <button class="frame-tab" data-tab="backlog">Backlog Hygiene (38)</button>
+                        <button class="frame-tab" data-tab="roadmap">Release Milestones</button>
+                    </div>
+
+                    <!-- Tab Panes -->
+                    <div class="frame-body">
+                        <div class="tab-pane active" id="pane-active">
+                            <div class="issue-row">
+                                <span class="issue-badge in-progress">IN PROGRESS</span>
+                                <span class="issue-id">ENG-842</span>
+                                <span class="issue-title">Migrate database cluster read replicas to Aurora v2</span>
+                                <span class="issue-tag">Database</span>
+                                <span class="issue-user">Alex M.</span>
+                            </div>
+                            <div class="issue-row">
+                                <span class="issue-badge in-progress">IN PROGRESS</span>
+                                <span class="issue-id">ENG-845</span>
+                                <span class="issue-title">Implement token refresh handshake in WebSocket client</span>
+                                <span class="issue-tag">Core API</span>
+                                <span class="issue-user">Sarah K.</span>
+                            </div>
+                            <div class="issue-row">
+                                <span class="issue-badge in-review">IN REVIEW</span>
+                                <span class="issue-id">ENG-850</span>
+                                <span class="issue-title">Configure edge caching headers on dynamic user endpoints</span>
+                                <span class="issue-tag">Infra</span>
+                                <span class="issue-user">David L.</span>
+                            </div>
+                            <div class="issue-row">
+                                <span class="issue-badge completed">COMPLETED</span>
+                                <span class="issue-id">ENG-839</span>
+                                <span class="issue-title">Upgrade OpenTelemetry collector pipeline to v0.98</span>
+                                <span class="issue-tag">Observability</span>
+                                <span class="issue-user">Elena R.</span>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="pane-backlog">
+                            <div class="issue-row">
+                                <span class="issue-badge backlog">TRIAGED</span>
+                                <span class="issue-id">ENG-861</span>
+                                <span class="issue-title">Add support for OAuth2 PKCE login flow in CLI</span>
+                                <span class="issue-tag">Auth</span>
+                                <span class="issue-user">Unassigned</span>
+                            </div>
+                            <div class="issue-row">
+                                <span class="issue-badge backlog">TRIAGED</span>
+                                <span class="issue-id">ENG-864</span>
+                                <span class="issue-title">Refactor payload serializer for binary compression</span>
+                                <span class="issue-tag">Performance</span>
+                                <span class="issue-user">Unassigned</span>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="pane-roadmap">
+                            <div class="roadmap-grid">
+                                <div class="roadmap-card">
+                                    <h4>Q1 Foundation</h4>
+                                    <p>Zero-knowledge team vault & sub-millisecond edge indexing.</p>
+                                    <div class="progress-bar"><div class="fill" style="width: 100%"></div></div>
+                                </div>
+                                <div class="roadmap-card">
+                                    <h4>Q2 Autonomous Sprints</h4>
+                                    <p>AI-assisted cycle capacity planning & pull-request auto-linking.</p>
+                                    <div class="progress-bar"><div class="fill" style="width: 65%"></div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Feature Grid (CSS Grid) -->
-        <section class="features-section" id="features">
+        <!-- Social Proof Logos -->
+        <section class="logos-section" id="customers">
+            <div class="container text-center">
+                <p class="logos-label">POWERING SPRINTS AT HIGH-VELOCITY COMPANIES</p>
+                <div class="logos-grid">
+                    <div class="logo-item"><strong>VERCEL</strong></div>
+                    <div class="logo-item"><strong>FIGMA</strong></div>
+                    <div class="logo-item"><strong>STRIPE</strong></div>
+                    <div class="logo-item"><strong>SUPABASE</strong></div>
+                    <div class="logo-item"><strong>GITHUB</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Features -->
+        <section class="bento-section" id="features">
             <div class="container">
-                <div class="section-heading text-center">
-                    <h2 class="section-title">Engineered for Velocity & Scale</h2>
-                    <p class="section-subtitle">Everything your infrastructure demands without complex provisioning scripts.</p>
+                <div class="section-header text-center">
+                    <h2 class="section-title">Designed for how modern engineers work</h2>
+                    <p class="section-subtitle">No clunky dropdowns. No endless loading spinners. Every key action is immediate.</p>
                 </div>
-                <div class="feature-grid">
-                    <article class="feature-card">
-                        <div class="feature-icon">🚀</div>
-                        <h3 class="feature-title">Microsecond Cold Starts</h3>
-                        <p class="feature-text">Pre-warmed execution sandboxes boot workloads in under 15ms globally across 42 availability zones.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3 class="feature-title">Zero-Trust Security</h3>
-                        <p class="feature-text">Automated mTLS, ephemeral tokens, and hardware-backed key rotation protect your sensitive data.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3 class="feature-title">Telemetry & Observability</h3>
-                        <p class="feature-text">Native OpenTelemetry instrumentation with distributed tracing, latency heatmaps, and audit logs.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <h3 class="feature-title">Automated Failover</h3>
-                        <p class="feature-text">Multi-region self-healing clusters detect anomalies and reroute traffic with zero downtime.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-icon">🌐</div>
-                        <h3 class="feature-title">Edge Mesh Routing</h3>
-                        <p class="feature-text">Intelligent layer-7 edge proxies terminate requests close to users for optimal TTFB.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-icon">🧩</div>
-                        <h3 class="feature-title">Declarative GitOps</h3>
-                        <p class="feature-text">Maintain your entire fleet state declaratively in Git with automated divergence reconciliation.</p>
-                    </article>
+
+                <div class="bento-grid">
+                    <!-- Card 1: Command Palette -->
+                    <div class="bento-card bento-wide">
+                        <div class="bento-content">
+                            <span class="bento-label">Interaction</span>
+                            <h3>Sub-50ms Command Palette</h3>
+                            <p>Perform any operation without touching your mouse. Assign reviewers, modify priorities, or split tickets in seconds.</p>
+                        </div>
+                        <div class="bento-visual">
+                            <div class="cmd-box">
+                                <div class="cmd-line"><span class="cmd-k">⌘K</span> <span class="cmd-t">Set priority &rarr; Urgent (P0)</span></div>
+                                <div class="cmd-line"><span class="cmd-k">⌘⇧M</span> <span class="cmd-t">Move to Current Cycle</span></div>
+                                <div class="cmd-line"><span class="cmd-k">⌘B</span> <span class="cmd-t">Create branch 'feat/eng-842'</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Git Synchronization -->
+                    <div class="bento-card">
+                        <div class="bento-content">
+                            <span class="bento-label">Integrations</span>
+                            <h3>True Git Bi-Directional Sync</h3>
+                            <p>Issues automatically transition states when pull requests open, receive review approvals, or merge.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Cycle Analytics -->
+                    <div class="bento-card">
+                        <div class="bento-content">
+                            <span class="bento-label">Observability</span>
+                            <h3>Automated Burnup & Velocity</h3>
+                            <p>Understand cycle throughput, scope creep, and bottlenecks without manual status updates or spreadsheets.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Offline First -->
+                    <div class="bento-card bento-wide">
+                        <div class="bento-content">
+                            <span class="bento-label">Architecture</span>
+                            <h3>Local-First Replication Engine</h3>
+                            <p>Pulse continues functioning seamlessly in offline environments. Edits synchronize conflict-free via CRDT state convergence.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section (Flexbox Cards) -->
+        <!-- Pricing Section with Monthly/Annual Toggle -->
         <section class="pricing-section" id="pricing">
             <div class="container">
-                <div class="section-heading text-center">
-                    <h2 class="section-title">Transparent, Predictable Pricing</h2>
-                    <p class="section-subtitle">No hidden bandwidth fees. Scale dynamically as your application expands.</p>
+                <div class="section-header text-center">
+                    <h2 class="section-title">Transparent, predictable plans</h2>
+                    <p class="section-subtitle">Simple per-seat pricing with zero surprise add-on charges.</p>
+                    
+                    <div class="pricing-toggle-wrap">
+                        <span>Billed Monthly</span>
+                        <label class="switch">
+                            <input type="checkbox" id="billingToggle">
+                            <span class="slider"></span>
+                        </label>
+                        <span>Billed Annually <span class="save-pill">Save 20%</span></span>
+                    </div>
                 </div>
-                <div class="pricing-grid">
+
+                <div class="pricing-cards-grid">
+                    <!-- Tier 1 -->
                     <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3>Developer</h3>
-                            <p class="price-desc">Ideal for hobbyists and side projects</p>
-                            <div class="price-amount"><span class="currency">$</span>0<span class="period">/mo</span></div>
+                        <div class="p-header">
+                            <h3>Starter</h3>
+                            <p class="p-desc">Essential issue tracking for small squads</p>
+                            <div class="p-price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="0" data-annual="0">0</span>
+                                <span class="term">/ user</span>
+                            </div>
                         </div>
-                        <ul class="pricing-features">
-                            <li>✓ Up to 3 Pipelines</li>
-                            <li>✓ 500 Build Mins / mo</li>
-                            <li>✓ Community Support</li>
-                            <li>✓ Shared Edge Nodes</li>
+                        <ul class="p-features">
+                            <li>Up to 10 team members</li>
+                            <li>Unlimited public & private issues</li>
+                            <li>Native GitHub integration</li>
+                            <li>Community Discord support</li>
                         </ul>
-                        <button class="btn btn-outline full-width" onclick="alert('Developer plan selected!')">Start Free</button>
+                        <button class="btn btn-outline full-width" onclick="alert('Starter plan selected.')">Get Started</button>
                     </div>
 
-                    <div class="pricing-card popular">
-                        <div class="popular-ribbon">Most Popular</div>
-                        <div class="pricing-header">
-                            <h3>Team Pro</h3>
-                            <p class="price-desc">For fast-growing development teams</p>
-                            <div class="price-amount"><span class="currency">$</span>49<span class="period">/mo</span></div>
+                    <!-- Tier 2 (Highlighted) -->
+                    <div class="pricing-card highlighted">
+                        <div class="popular-tag">MOST POPULAR</div>
+                        <div class="p-header">
+                            <h3>Standard Pro</h3>
+                            <p class="p-desc">High velocity tools for growing product teams</p>
+                            <div class="p-price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="15" data-annual="12">15</span>
+                                <span class="term">/ user / mo</span>
+                            </div>
                         </div>
-                        <ul class="pricing-features">
-                            <li>✓ Unlimited Concurrent Pipelines</li>
-                            <li>✓ 10,000 Build Mins / mo</li>
-                            <li>✓ Dedicated Cluster Nodes</li>
-                            <li>✓ 24/7 Priority SLA Support</li>
-                            <li>✓ Custom Domain Routing</li>
+                        <ul class="p-features">
+                            <li>Unlimited team members</li>
+                            <li>Automated cycles & sprints</li>
+                            <li>Custom roadmaps & milestone tracking</li>
+                            <li>SOC 2 reports & SLA guarantees</li>
+                            <li>Priority email & chat support</li>
                         </ul>
-                        <button class="btn btn-primary full-width" onclick="alert('Team Pro plan selected!')">Upgrade to Pro</button>
+                        <button class="btn btn-primary full-width" onclick="alert('Standard Pro trial initiated.')">Start 14-Day Free Trial</button>
                     </div>
 
+                    <!-- Tier 3 -->
                     <div class="pricing-card">
-                        <div class="pricing-header">
+                        <div class="p-header">
                             <h3>Enterprise</h3>
-                            <p class="price-desc">Custom governance and VPC peering</p>
-                            <div class="price-amount"><span class="currency">$</span>249<span class="period">/mo</span></div>
+                            <p class="p-desc">Custom governance, compliance & dedicated scale</p>
+                            <div class="p-price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="35" data-annual="28">35</span>
+                                <span class="term">/ user / mo</span>
+                            </div>
                         </div>
-                        <ul class="pricing-features">
-                            <li>✓ Dedicated VPC Infrastructure</li>
-                            <li>✓ Unlimited Build Minutes</li>
-                            <li>✓ SOC2 & HIPAA Compliance</li>
-                            <li>✓ Dedicated TAM & Custom SLA</li>
+                        <ul class="p-features">
+                            <li>SAML 2.0 Single Sign-On (SSO)</li>
+                            <li>SCIM user provisioning</li>
+                            <li>Dedicated customer success engineer</li>
+                            <li>99.99% uptime SLA</li>
+                            <li>Custom contract & invoicing terms</li>
                         </ul>
-                        <button class="btn btn-outline full-width" onclick="alert('Enterprise inquiry dispatched!')">Contact Sales</button>
+                        <button class="btn btn-outline full-width" onclick="alert('Enterprise sales contact initiated.')">Contact Enterprise</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section" id="cta">
+        <!-- FAQ Accordion -->
+        <section class="faq-section" id="faq">
+            <div class="container faq-container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Frequently asked questions</h2>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>How does Pulse compare to legacy tools like Jira?</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-body">
+                            <p>Pulse is engineered from first principles for speed. Average interaction latency is under 50ms compared to several seconds in legacy software. It features complete keyboard navigability, zero bloated configuration menus, and native Git integration.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>Can we migrate existing issues from GitHub or Jira?</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-body">
+                            <p>Yes. Pulse includes a one-click migration wizard that imports all issues, labels, milestones, assignees, and attachments while preserving chronological history.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>Do you support self-hosting or on-premise deployments?</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-body">
+                            <p>Our Enterprise plan provides air-gapped Docker and Kubernetes deployment targets, dedicated VPC peering on AWS/GCP, and strict audit log streaming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="cta-bottom-section" id="cta">
             <div class="container text-center">
-                <h2 class="cta-title">Ready to Transform Your Cloud Workflows?</h2>
-                <p class="cta-subtitle">Deploy your first container pipeline in under 3 minutes with zero configuration.</p>
-                <form class="cta-form" id="signupForm">
-                    <input type="email" class="cta-input" placeholder="Enter work email..." required>
-                    <button type="submit" class="btn btn-primary btn-large">Claim 14-Day Trial</button>
-                </form>
-                <p class="cta-footnote">No credit card required • Instant access • Cancel anytime</p>
+                <h2>Accelerate your team's engineering velocity today</h2>
+                <p>Join over 15,000 engineering squads building better software faster.</p>
+                <div class="cta-form-wrap">
+                    <form id="heroForm" class="cta-form">
+                        <input type="email" placeholder="name@company.com" required>
+                        <button type="submit" class="btn btn-primary">Start Free Trial</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Semantic Footer -->
-    <footer class="site-footer">
+    <!-- Global Footer -->
+    <footer class="footer">
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <span class="logo-mark">⚡</span> <strong>NovaFlow</strong>
-                <p class="footer-tagline">Architected for next-generation distributed cloud compute systems.</p>
+            <div class="footer-col-brand">
+                <div class="brand">
+                    <svg class="brand-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <rect width="24" height="24" rx="6" fill="#6366F1"/>
+                        <path d="M7 12L10 15L17 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="brand-name">Pulse</span>
+                </div>
+                <p class="footer-copy">The modern engineering intelligence and sprint management platform.</p>
             </div>
-            <div class="footer-column">
+            <div class="footer-col">
                 <h4>Product</h4>
-                <ul>
-                    <li><a href="#features">Pipelines</a></li>
-                    <li><a href="#architecture">Edge Gateways</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                </ul>
+                <a href="#features">Command Menu</a>
+                <a href="#method">Sprint Cycles</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#">Roadmap</a>
             </div>
-            <div class="footer-column">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">API Reference</a></li>
-                    <li><a href="#">System Status</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Integrations</h4>
+                <a href="#">GitHub</a>
+                <a href="#">GitLab</a>
+                <a href="#">Slack</a>
+                <a href="#">Figma</a>
             </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Security Audit</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Engineering Blog</a>
+                <a href="#">Security</a>
+                <a href="#">Privacy Policy</a>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2026 NovaFlow Cloud Technologies. All rights reserved.</p>
+            <p>&copy; 2026 Pulse Software Inc. All rights reserved.</p>
         </div>
     </footer>
 

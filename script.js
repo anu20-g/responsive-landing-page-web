@@ -1,33 +1,77 @@
-// Mobile Navigation Toggle & Smooth Scrolling
+// Pulse Interactive Controls: Tabs, FAQ Accordion, Billing Toggle, Mobile Nav
 document.addEventListener('DOMContentLoaded', () => {
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // 1. Interactive App Preview Tabs
+    const tabs = document.querySelectorAll('.frame-tab');
+    const panes = document.querySelectorAll('.tab-pane');
 
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !isExpanded);
-            navMenu.classList.toggle('active');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            panes.forEach(p => p.classList.remove('active'));
+
+            tab.classList.add('active');
+            const targetPane = document.getElementById(`pane-${tab.dataset.tab}`);
+            if (targetPane) targetPane.classList.add('active');
         });
+    });
 
-        // Close mobile drawer on navigation click
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
+    // 2. Billing Toggle (Monthly / Annual Discount)
+    const billingToggle = document.getElementById('billingToggle');
+    const amounts = document.querySelectorAll('.amount');
+
+    if (billingToggle) {
+        billingToggle.addEventListener('change', () => {
+            const isAnnual = billingToggle.checked;
+            amounts.forEach(el => {
+                const target = isAnnual ? el.dataset.annual : el.dataset.monthly;
+                el.textContent = target;
             });
         });
     }
 
-    // Trial Form Submission Simulation
-    const signupForm = document.getElementById('signupForm');
-    if (signupForm) {
-        signupForm.addEventListener('submit', (e) => {
+    // 3. FAQ Accordion
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const body = header.nextElementSibling;
+            const isOpen = body.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+            document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+
+            if (!isOpen) {
+                body.classList.add('open');
+                header.classList.add('active');
+            }
+        });
+    });
+
+    // 4. Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '64px';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = '#0a0a0c';
+            navLinks.style.padding = '1.5rem';
+            navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+        });
+    }
+
+    // 5. Form submission
+    const heroForm = document.getElementById('heroForm');
+    if (heroForm) {
+        heroForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const email = signupForm.querySelector('input[type="email"]').value;
-            alert(`🎉 Verification link dispatched to ${email}! Check your inbox.`);
-            signupForm.reset();
+            const input = heroForm.querySelector('input');
+            alert(`Thanks! An onboarding invitation has been reserved for ${input.value}.`);
+            input.value = '';
         });
     }
 });
