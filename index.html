@@ -3,35 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudSync | Next-Gen Cloud Storage</title>
+    <meta name="description" content="NovaFlow - High-performance intelligent workflow orchestration platform.">
+    <title>NovaFlow | Intelligent Cloud Automation</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">CloudSync</div>
-        <a href="#cta" class="nav-cta">Get Started</a>
+    <!-- Header with Accessible Nav -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" aria-label="NovaFlow Homepage">
+                <span class="logo-mark">⚡</span> NovaFlow
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle Navigation Menu">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-cta-wrapper">
+                    <a href="#pricing" class="btn btn-secondary">Sign In</a>
+                    <a href="#cta" class="btn btn-primary">Start Free Trial</a>
+                </div>
+            </nav>
+        </div>
     </header>
-    <section class="hero">
-        <h1>Fast, Secure & Intelligent Cloud Backup</h1>
-        <p>Sync your files seamlessly across devices with zero friction and enterprise encryption.</p>
-        <button class="hero-btn" onclick="alert('Welcome to CloudSync!')">Start 14-Day Free Trial</button>
-    </section>
-    <section class="features">
-        <div class="feat-card">
-            <h3>Lightning Sync</h3>
-            <p>Real-time block-level file replication around the globe.</p>
+
+    <main id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Next-Gen Orchestration v2.4</span>
+                    <h1 class="hero-title">Automate Cloud Infrastructure with Zero Friction</h1>
+                    <p class="hero-description">
+                        NovaFlow unites distributed CI/CD pipelines, container cluster deployments, and real-time observability in one unified developer platform.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#pricing" class="btn btn-primary btn-large">Get Started Free</a>
+                        <a href="#features" class="btn btn-outline btn-large">Explore Architecture</a>
+                    </div>
+                    <div class="hero-proof">
+                        <div class="proof-avatars">
+                            <span class="avatar">👨‍💻</span>
+                            <span class="avatar">👩‍💻</span>
+                            <span class="avatar">🧑‍💻</span>
+                        </div>
+                        <p class="proof-text">Trusted by <strong>15,000+</strong> engineering teams worldwide</p>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="mockup-window">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="window-title">workflow.orchestration.yml</span>
+                        </div>
+                        <pre class="code-preview"><code><span class="c-keyword">pipeline</span>: <span class="c-string">"production-deploy"</span>
+<span class="c-keyword">triggers</span>:
+  - <span class="c-prop">branch</span>: <span class="c-string">"main"</span>
+<span class="c-keyword">jobs</span>:
+  <span class="c-prop">build-cluster</span>:
+    <span class="c-keyword">strategy</span>: <span class="c-string">"matrix"</span>
+    <span class="c-keyword">nodes</span>: <span class="c-number">12</span>
+    <span class="c-keyword">latency</span>: <span class="c-string">"&lt; 25ms"</span>
+    <span class="c-keyword">status</span>: <span class="c-success">"READY ⚡"</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Grid (CSS Grid) -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2 class="section-title">Engineered for Velocity & Scale</h2>
+                    <p class="section-subtitle">Everything your infrastructure demands without complex provisioning scripts.</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3 class="feature-title">Microsecond Cold Starts</h3>
+                        <p class="feature-text">Pre-warmed execution sandboxes boot workloads in under 15ms globally across 42 availability zones.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Zero-Trust Security</h3>
+                        <p class="feature-text">Automated mTLS, ephemeral tokens, and hardware-backed key rotation protect your sensitive data.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Telemetry & Observability</h3>
+                        <p class="feature-text">Native OpenTelemetry instrumentation with distributed tracing, latency heatmaps, and audit logs.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3 class="feature-title">Automated Failover</h3>
+                        <p class="feature-text">Multi-region self-healing clusters detect anomalies and reroute traffic with zero downtime.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3 class="feature-title">Edge Mesh Routing</h3>
+                        <p class="feature-text">Intelligent layer-7 edge proxies terminate requests close to users for optimal TTFB.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🧩</div>
+                        <h3 class="feature-title">Declarative GitOps</h3>
+                        <p class="feature-text">Maintain your entire fleet state declaratively in Git with automated divergence reconciliation.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section (Flexbox Cards) -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2 class="section-title">Transparent, Predictable Pricing</h2>
+                    <p class="section-subtitle">No hidden bandwidth fees. Scale dynamically as your application expands.</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Developer</h3>
+                            <p class="price-desc">Ideal for hobbyists and side projects</p>
+                            <div class="price-amount"><span class="currency">$</span>0<span class="period">/mo</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Up to 3 Pipelines</li>
+                            <li>✓ 500 Build Mins / mo</li>
+                            <li>✓ Community Support</li>
+                            <li>✓ Shared Edge Nodes</li>
+                        </ul>
+                        <button class="btn btn-outline full-width" onclick="alert('Developer plan selected!')">Start Free</button>
+                    </div>
+
+                    <div class="pricing-card popular">
+                        <div class="popular-ribbon">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Team Pro</h3>
+                            <p class="price-desc">For fast-growing development teams</p>
+                            <div class="price-amount"><span class="currency">$</span>49<span class="period">/mo</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Unlimited Concurrent Pipelines</li>
+                            <li>✓ 10,000 Build Mins / mo</li>
+                            <li>✓ Dedicated Cluster Nodes</li>
+                            <li>✓ 24/7 Priority SLA Support</li>
+                            <li>✓ Custom Domain Routing</li>
+                        </ul>
+                        <button class="btn btn-primary full-width" onclick="alert('Team Pro plan selected!')">Upgrade to Pro</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Enterprise</h3>
+                            <p class="price-desc">Custom governance and VPC peering</p>
+                            <div class="price-amount"><span class="currency">$</span>249<span class="period">/mo</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Dedicated VPC Infrastructure</li>
+                            <li>✓ Unlimited Build Minutes</li>
+                            <li>✓ SOC2 & HIPAA Compliance</li>
+                            <li>✓ Dedicated TAM & Custom SLA</li>
+                        </ul>
+                        <button class="btn btn-outline full-width" onclick="alert('Enterprise inquiry dispatched!')">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta">
+            <div class="container text-center">
+                <h2 class="cta-title">Ready to Transform Your Cloud Workflows?</h2>
+                <p class="cta-subtitle">Deploy your first container pipeline in under 3 minutes with zero configuration.</p>
+                <form class="cta-form" id="signupForm">
+                    <input type="email" class="cta-input" placeholder="Enter work email..." required>
+                    <button type="submit" class="btn btn-primary btn-large">Claim 14-Day Trial</button>
+                </form>
+                <p class="cta-footnote">No credit card required • Instant access • Cancel anytime</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Semantic Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <span class="logo-mark">⚡</span> <strong>NovaFlow</strong>
+                <p class="footer-tagline">Architected for next-generation distributed cloud compute systems.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Pipelines</a></li>
+                    <li><a href="#architecture">Edge Gateways</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">System Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Security Audit</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="feat-card">
-            <h3>End-to-End Crypto</h3>
-            <p>Zero-knowledge client-side encryption ensures absolute privacy.</p>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 NovaFlow Cloud Technologies. All rights reserved.</p>
         </div>
-        <div class="feat-card">
-            <h3>Version Control</h3>
-            <p>Roll back any file to any version within the past 30 days.</p>
-        </div>
-    </section>
-    <footer id="cta">
-        <p>&copy; 2026 CloudSync Technologies Inc. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
